@@ -7,7 +7,7 @@
  * Facebook will output a warning message when you open up the console, don't worry, this code
  * will not take over your computer.
  * 
- * SAVE THE OUTPUT TO <sbg_tree_path>/members.json
+ * SAVE THE OUTPUT TO <path_to_this_file>/members.json
  *
  *
  */
