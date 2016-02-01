@@ -75,7 +75,7 @@ def gen_tree(member):
     most_prolific = [child_count, member]
   status = ''
   if member in dead_orphans:
-    status = 'DEAD'
+    status = 'DED'
 
   #print "{} {} {} -- Parent: {}, Child Count: {}, Descendent Count {}, Record {}".format(indent_char * indent_width * depth, depth_text, member, parent, child_count, descendent_count, members[member]) 
   print "{} {} {} - Descendents: {} {}".format(indent_char * indent_width * depth, depth_text, member, descendent_count, status) 
@@ -168,8 +168,8 @@ def main():
     gen_tree(root)
   print "Total members:         {}".format(len(members_json))
   print "Total members counted: {}".format(total_members)
-  print "Dead orphan count:     {}".format(len(dead_orphans))
-  print "Dead orphans:          {}".format(','.join(dead_orphans))
+  print "Ded orphan count:      {}".format(len(dead_orphans))
+  print "Ded orphans:           {}".format(','.join(dead_orphans))
   print "Most Prolific:         {} with {} children".format(','.join(most_prolific[1:]), most_prolific[0])
 
 
