@@ -17,7 +17,7 @@ var members = {};
 for (i=0; i < member_obj.length; i++) {
   var name = member_obj[i].getElementsByClassName("fsl fwb fcb")[0].innerText;
   var adder = member_obj[i].getElementsByClassName("fsm fwn fcg")[0].innerText.split('\n')[1];
-  var timestamp = member_obj[i].getElementsByClassName("timestamp")[0].title;
+  var timestamp = member_obj[i].getElementsByClassName("timestampContent")[0].textContent;
   members[name] = { 'adder' : adder, 'timestamp' : timestamp };
 }
 

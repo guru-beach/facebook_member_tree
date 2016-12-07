@@ -33,7 +33,7 @@ members = {}
 orphans = []
 dead_orphans = []
 most_prolific = [0]
-date_format = "%A, %B %d, %Y at %I:%M%p"
+date_formats = ["%B %d, %Y", "%B %d", "%A, %B %d, %Y at %I:%M%p" ]
 
 def get_parent(parent_line):
   """Transforms parent string to just the name.   If no parent, returns None, typically this is the person who started the group or an orphan"""
@@ -47,9 +47,12 @@ def get_parent(parent_line):
   return parent
 
 
-def get_datetime(date, date_format=date_format):
-  return datetime.strptime(date, date_format)
-
+def get_datetime(date):
+    for date_format in date_formats:
+        try:
+            return datetime.strptime(date, date_format)
+        except:
+            continue
   
 def gen_tree(member):
   global most_prolific
